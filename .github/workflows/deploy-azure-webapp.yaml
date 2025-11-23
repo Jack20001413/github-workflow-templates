@@ -24,9 +24,6 @@ jobs:
   deploy:
     name: Deploy application
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: none
     environment: ${{ inputs.environment}}
     steps:
       - name: Download pipeline artifact
