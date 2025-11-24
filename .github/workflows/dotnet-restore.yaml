@@ -1,0 +1,30 @@
+on:
+    workflow_call:
+        inputs:
+            dotnet-version:
+                description: '.NET version'
+                type: string
+                required: true
+                default: '9.x.x'
+            project-directory:
+                description: 'Path to project directory'
+                type: string
+                required: true
+
+jobs:
+    restore:
+        name: Restore .NET dependencies
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
+              with:
+                clean: true
+
+            - name: Install .NET Core SDK
+              uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: ${{ inputs.dotnet-version}}
+
+            - name: Restore dependencies
+              run: dotnet restore ${{ inputs.project-directory }} --no-cache
