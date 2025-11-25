@@ -14,11 +14,6 @@ inputs:
 runs:
     using: "composite"
     steps:
-        - name: Checkout repository
-          uses: actions/checkout@v5
-          with:
-            clean: true
-
         - name: Install .NET Core SDK
           uses: actions/setup-dotnet@v4
           with:
