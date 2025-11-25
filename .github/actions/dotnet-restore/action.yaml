@@ -5,12 +5,10 @@ description: "Restore .NET dependencies for a project"
 inputs:
     dotnet-version:
         description: '.NET version'
-        type: string
         required: true
         default: '9.x.x'
     project-directory:
         description: 'Path to project directory'
-        type: string
         required: true
 
 runs:
