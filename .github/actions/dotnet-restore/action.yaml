@@ -26,3 +26,4 @@ runs:
 
         - name: Restore dependencies
           run: dotnet restore ${{ inputs.project-directory }} --no-cache
+          shell: bash
